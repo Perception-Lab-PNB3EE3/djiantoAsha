@@ -1,18 +1,209 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
-
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
+# Summary Statistics
+Below are the summary statistics for each condition in the data set (i.e., mean, standard deviation).
 ```{r}
-plot(cars)
+data <- read.csv("assignment_dataVis_dataset.csv")
+
+#mean
+cond1_mean <- colMeans(data[1:142, 2:3])
+cond2_mean <- colMeans(data[143:284, 2:3])
+cond3_mean <- colMeans(data[285:426, 2:3])
+cond4_mean <- colMeans(data[427:568, 2:3])
+
+#sd
+cond1_sd <- apply(data[1:142, 2:3], 2, sd)
+cond2_sd <- apply(data[143:284, 2:3], 2, sd)
+cond3_sd <- apply(data[285:426, 2:3], 2, sd)
+cond4_sd <- apply(data[427:568, 2:3], 2, sd)
+
+#table of summary statistics
+summarystats <- data.frame(condition = c("cond1", "cond2", "cond3", "cond4"),
+                                 mean_x = c(cond1_mean["x"], cond2_mean["x"], cond3_mean["x"], cond4_mean["x"]),
+                                 mean_y = c(cond1_mean["y"], cond2_mean["y"], cond3_mean["y"], cond4_mean["y"]),
+                                 sd_x = c(cond1_sd["x"], cond2_sd["x"], cond3_sd["x"], cond4_sd["x"]),
+                                 sd_y = c(cond1_sd["y"], cond2_sd["y"], cond3_sd["y"], cond4_sd["y"])
+                                 )
+print(summarystats)
+
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+# Data Visualization
+Visualize the results of each condition. At very least, you should plot y as a function of x for each condition. You are welcome to create as many plots as you like. Try to apply the visualization best practices presented during lecture. Please create your plots in line in your notebook
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+### Scatter Plots without Error bars
+```{r}
+# condition 1 scatter plot
+reg1 <- lm(y~x, data = data[1:142, 2:3]) # y-intercept = 53.4530, slope = -0.1036
+cor1 <- (cor(data[1:142, 2], data[1:142, 3])^2) # R^2 = 0.00415662 (very weak correlation)
+cond1_plot <- plot(data[1:142, 2:3],
+                     main = "Condition 1 Scatter Plot",
+                     ylim = c(0,100),
+                     xlim = c(0,100))
+text(x=88, y=95, "y = 53.4530 - 0.1036x", col = "red")
+text(x=88, y=85, "R^2 = 0.00415662", col = "black")
+abline(coef= coef(reg1), col="red")
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+# condition 2 scatter plot
+reg2 <- lm(y~x, data = data[143:284, 2:3]) # y-intercept = 53.8095, slope = -0.1102
+cor2 <- (cor(data[143:284, 2], data[143:284, 3])^2) # R^2 = 0.004704093 (very weak correlation)
+
+cond2_plot <- plot(data[143:284, 2:3],
+                     main = "Condition 2 Scatter Plot",
+                     ylim = c(0,100),
+                     xlim = c(0,100))
+text(x=88, y=95, "y = 53.8095 - 0.1102x", col = "red")
+text(x=88, y=85, "R^2 = 0.004704093", col = "black")
+abline(coef= coef(reg2), col="red")
+
+
+# condition 3 scatter plot
+reg3 <- lm(y~x, data = data[285:426, 2:3]) # y-intercept = 53.8126, slope = -0.1102 
+cor3 <- (cor(data[285:426, 2], data[285:426, 3])^2) # R^2 = 0.004707223 (very weak correlation)
+
+cond3_plot <- plot(data[285:426, 2:3],
+                     main = "Condition 3 Scatter Plot",
+                     ylim = c(0,100),
+                     xlim = c(0,100))
+text(x=88, y=95, "y = 53.8126 - 0.1102x", col = "red")
+text(x=88, y=85, "R^2 = 0.004707223", col = "black")
+abline(coef= coef(reg3), col="red")
+
+# condition 4 scatter plot
+reg4 <- lm(y~x, data = data[427:568, 2:3]) # y-intercept = 53.3267, slope = -0.1011
+cor4 <- (cor(data[427:568, 2], data[427:568, 3])^2) # R^2 = 0.0039641 (very weak correlation)
+
+cond4_plot <- plot(data[427:568, 2:3],
+                     main = "Condition 4 Scatter Plot",
+                     ylim = c(0,100),
+                     xlim = c(0,100))
+text(x=88, y=95, "y = 53.3267 - 0.1011x", col = "red")
+text(x=88, y=85, "R^2 = 0.0039641", col = "black")
+
+abline(coef= coef(reg4), col="red")
+```
+
+
+### Scatter Plots with Error bars
+Error bars represent standard deviation.
+```{r}
+# condition 1 scatter plot
+reg1 <- lm(y~x, data = data[1:142, 2:3]) # y-intercept = 53.4530, slope = -0.1036
+cor1 <- (cor(data[1:142, 2], data[1:142, 3])^2) # R^2 = 0.00415662 (very weak correlation)
+cond1_plot <- plot(data[1:142, 2:3],
+                     main = "Condition 1 Scatter Plot",
+                     ylim = c(0,100),
+                     xlim = c(0,100))
+text(x=88, y=95, "y = 53.4530 - 0.1036x", col = "red")
+text(x=88, y=85, "R^2 = 0.00415662", col = "black")
+abline(coef= coef(reg1), col="red")
+con1x <- data[1:142, 2]
+con1y <- data[1:142, 3]
+segments(con1x, (con1y+cond1_sd), con1x, (con1y-cond1_sd))
+
+
+# condition 2 scatter plot
+reg2 <- lm(y~x, data = data[143:284, 2:3]) # y-intercept = 53.8095, slope = -0.1102
+cor2 <- (cor(data[143:284, 2], data[143:284, 3])^2) # R^2 = 0.004704093 (very weak correlation)
+
+cond2_plot <- plot(data[143:284, 2:3],
+                     main = "Condition 2 Scatter Plot",
+                     ylim = c(0,100),
+                     xlim = c(0,100))
+text(x=88, y=95, "y = 53.8095 - 0.1102x", col = "red")
+text(x=88, y=85, "R^2 = 0.004704093", col = "black")
+abline(coef= coef(reg2), col="red")
+con2x <- data[143:284, 2]
+con2y <- data[143:284, 3]
+segments(con2x, (con2y+cond2_sd), con2x, (con2y-cond2_sd))
+
+
+# condition 3 scatter plot
+reg3 <- lm(y~x, data = data[285:426, 2:3]) # y-intercept = 53.8126, slope = -0.1102 
+cor3 <- (cor(data[285:426, 2], data[285:426, 3])^2) # R^2 = 0.004707223 (very weak correlation)
+
+cond3_plot <- plot(data[285:426, 2:3],
+                     main = "Condition 3 Scatter Plot",
+                     ylim = c(0,100),
+                     xlim = c(0,100))
+text(x=88, y=95, "y = 53.8126 - 0.1102x", col = "red")
+text(x=88, y=85, "R^2 = 0.004707223", col = "black")
+abline(coef= coef(reg3), col="red")
+con3x <- data[285:426, 2]
+con3y <- data[285:426, 3]
+segments(con3x, (con3y+cond3_sd), con3x, (con3y-cond3_sd))
+
+
+
+# condition 4 scatter plot
+reg4 <- lm(y~x, data = data[427:568, 2:3]) # y-intercept = 53.3267, slope = -0.1011
+cor4 <- (cor(data[427:568, 2], data[427:568, 3])^2) # R^2 = 0.0039641 (very weak correlation)
+
+cond4_plot <- plot(data[427:568, 2:3],
+                     main = "Condition 4 Scatter Plot",
+                     ylim = c(0,100),
+                     xlim = c(0,100))
+text(x=88, y=95, "y = 53.3267 - 0.1011x", col = "red")
+text(x=88, y=85, "R^2 = 0.0039641", col = "black")
+abline(coef= coef(reg4), col="red")
+con4x <- data[427:568, 2]
+con4y <- data[427:568, 3]
+segments(con4x, (con4y+cond4_sd), con4x, (con4y-cond4_sd))
+
+
+
+```
+
+### Box Plots
+```{r}
+# condition 1 box plot
+con1_bp <- boxplot(data[1:142, 2:3],
+                   main = "Condition 1 Box Plot",
+                   ylim = c(0,100))
+
+# condition 2 box plot
+con2_bp <- boxplot(data[143:284, 2:3],
+                   main = "Condition 2 Box Plot",
+                   ylim = c(0,100))
+
+# condition 3 box plot
+con3_bp <- boxplot(data[285:426, 2:3],
+                   main = "Condition 3 Box Plot",
+                   ylim = c(0,100))
+
+# condition 4 box plot
+con4_bp <- boxplot(data[427:568, 2:3],
+                   main = "Condition 4 Box Plot",
+                   ylim = c(0,100))
+
+```
+
+# Questions
+
+#### What can be concluded from the dataset?
+The data show that there is no (or very weak) correlation between x and y in all 4 conditions.
+
+
+
+#### What did you find most challenging about this assignment?
+Trying to figure out how to implement the visualization best practices for each plot. I included scatter plots of each condition with and without error bars but found that the plots with error bars were crowded and more difficult to read and thus interpret. So I thought that a box plot would show the varaiation in the data better. I included all three plots in the script.
+
+
+
+#### What did you learn in completing this assignment? What are you still curious about?
+I learned the importance of visualizing data because the summary statistics for each condition had the same/similar values (for mean and standard deviation), but through plotting the data, I could see that they present very different figures even though they share the same means and standard deviations. 
+
+
+
+#### Why is it important to visualize data?
+It gives us a better understanding of what is going on in the data and allows for more efficient analyses and interpretations. Raw data presented in a table can be analyzed by comparing values to each other, but it is time consuming and not ideal. When data is visualized through a graph/plot, it provides a logical structure for comparing data points, identifying trends, and interpretation of findings through looking at the whole data set. It can allow us to draw conclusions on what statistical tests and methods are appropriate for the construct being measured. 
+
+```{r}
+
+```
+
