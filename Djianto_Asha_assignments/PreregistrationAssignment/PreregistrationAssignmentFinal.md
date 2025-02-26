@@ -82,9 +82,28 @@ There will be no additional blinding in this study as all participants in all gr
 
 ## 8. Study design 
 
-This study is a 3x2 factorial design that includes 2 factors. One factor is ADHD symptom level, which will include comparisons of 3 different groups: typically developing group (TD), subthreshold ADHD group (ST), and full syndrome ADHD group (ADHD). The other factor is gender, which will include 2 groups: boys and girls. This will be the design to test the hypothesis for the confirmatory analysis. For my exploratory analysis, I will use a three group, mixed factorial design. The between group factor is the ADHD symptom level (3 groups) and the within-subjects factor is the emotion type, where all participants will be tested on all 6 emotion types (happy, sad, angry, disgust, fear, surprised). This exploratory analysis will examine any differences in FER between the emotion types as well as between ADHD groups.
+This study is a 3x2 factorial design that includes 2 factors. One factor is ADHD symptom level, which will include comparisons of 3 different groups: typically developing group (TD), subthreshold ADHD group (ST), and full syndrome ADHD group (ADHD). The other factor is gender, which will include 2 groups: boys and girls. This will be the design to test the hypothesis for the confirmatory analysis. For my exploratory analysis, I will use a three group, mixed factorial design. The between group factor is the ADHD symptom level (3 groups) and the within-subjects factor is the emotion type, where all participants will be tested on all 6 emotion types (happy, sad, angry, surprised, fear, disgust). This exploratory analysis will examine any differences in FER between the emotion types as well as between ADHD groups.
 
-The entire study is a web-based experiment. The study will start off with a FER test. This involves participants looking at an image of a scene at the centre of the screen with the target face blocked out with a white circle. The target face will show one of the 6 emotion types based on the context of the scene. The stimuli will be on the screen for 750 ms before changing to the response screen. The response screen will show all 6 possible emotions as emoticons and the participant must press the emoticon they feel best represents the target face. The response section is self-paced and reaction time will be recorded to measure efficiency of processing. There will be 18 trials total with each emotion showing up 3 times in a randomized order.
+The entire study is a web-based experiment. The study will start off with a FER test. This involves participants looking at an image of a scene at the centre of the screen with the target face blocked out with a white circle (figure 1a). The target face will show one of the 6 emotion types based on the context of the scene. The stimuli will be on the screen for 750 ms before changing to the response screen. The response screen will show all 6 possible emotions as emoticons (figure 1b) and the participant must press the emoticon they feel best represents the target face. The response section is self-paced and reaction time will be recorded to measure efficiency of processing. There will be 18 trials total with each emotion showing up 3 times in a randomized order.
+
+```{r}
+
+Figure 1
+
+a)
+
+<img src="HappyChild.jpg" alt="HappyChild" width="300"/>
+
+Example of test stimuli.
+
+
+b)
+
+<img src="6basicemotions.png" alt="emoticons" width="400"/>
+
+Note. Emoticons representing the 6 basic emotions to be used in the current study. From left to right; happy, sad, angry, surprised, fear, disgust.
+
+```
 
 After the FER test, the participants will be brought to a survey to measure their ADHD symptoms (based on DSM-5 diagnostic criteria). This survey will be how participants are assigned to the different ADHD symptom level groups. There will be statements related to the different ADHD symptoms with forced choice options (agree, disagree). If they agree to 6 or more of the statements, they will be a part of the ADHD group. If they agree to 3–5 statements, they are a part of the ST group. Less than 3 would be a part of the TD group. These group assignments will be used in the analyses of the results.
 
