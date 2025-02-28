@@ -400,14 +400,16 @@ so if you are using a subset of a larger dataset, please describe the subset tha
 ## 25. Other 
 
 > **(Optional)** If there is any additional information that you feel needs to be included in your preregistration, please enter it here. 
+[@dsm]
 
 # References
 > Include any works cited here. 
 
-YAML header
-titles:
-output: maybe .html
-bibliography: .bib file
+title: 'References'
+author: "Asha Djianto"
+bibliography: PreregistrationReferences.bib
+csl: apa.csl
 
+output: html_document
 
-
+test text [@berggren2016]
