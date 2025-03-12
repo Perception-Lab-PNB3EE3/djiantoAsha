@@ -405,11 +405,11 @@ so if you are using a subset of a larger dataset, please describe the subset tha
 # References
 > Include any works cited here. 
 
-title: 'References'
+::: {#refs custom-style="Bibliography"}
+title: "References"
 author: "Asha Djianto"
-bibliography: PreregistrationReferences.bib
+bibliography: "C:/Users/djian/Downloads/PreregistrationReferences.bib"
 csl: apa.csl
 
 output: html_document
-
-test text [@berggren2016]
+:::
