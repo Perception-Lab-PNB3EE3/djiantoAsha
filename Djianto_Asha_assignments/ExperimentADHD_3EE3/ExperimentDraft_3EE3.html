@@ -199,7 +199,7 @@
       timeline_variables: stimuli_sceneEmoji, 
       randomize_order: true
     };
- //   timeline.push(test_procedure);
+    timeline.push(test_procedure);
 
 ///////////////////////////////////////////////////////////////////////////// ADHD survey
 
@@ -426,7 +426,8 @@
         
     var debrief_block = {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: `<p>happy_correct = ${happy_correct.count()}, sad_correct = ${sad_correct.count()}, angry_correct = ${angry_correct.count()}</p>
+      stimulus: `<p>trials = ${trials}</p>
+      <p>happy_correct = ${happy_correct.count()}, sad_correct = ${sad_correct.count()}, angry_correct = ${angry_correct.count()}</p>
       <p>happy_rt = ${happy_rt}ms, sad_rt = ${sad_rt}ms, angry_rt = ${angry_rt}ms</p>
       `
     };
