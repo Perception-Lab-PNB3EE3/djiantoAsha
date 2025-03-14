@@ -24,7 +24,7 @@
 
     var preload = {
       type: jsPsychPreload,
-      images: ['happy.png', 'sad.png', 'angry.png', '6basicemotions.png',
+      images: ['happy.png', 'sad.png', 'angry.png', '6basicemotions.png', 'instructions_example_img.png', 'thankYou.png',
       'happy_img/happyChild1.png', 'happy_img/happyChild2.png', 'happy_img/happyChild3.png', 'happy_img/happyChild4.png', 
       'happy_img/happyChild5.png', 'happy_img/happyChild6.png', 'happy_img/happyChild7.png', 'happy_img/happyChild8.png',
       'sad_img/sadChild1.png', 'sad_img/sadChild2.png', 'sad_img/sadChild3.png', 'sad_img/sadChild4.png', 
@@ -84,9 +84,9 @@
     const instructions_scene = {
       type: jsPsychHtmlButtonResponse,
       stimulus: `<p>After, a picture will appear of a scene for a couple of seconds. One of the people's faces will be covered by a white circle like this:</p>
-      <p><img src='happy_img/happyChild1.png' width='300'></img></p>
-      <p>Think about what is happening in the scene and what facial expression is behind the white circle.</p>
-      <p style="color: white";>.</p>
+      <p><img src='instructions_example_img.png' width='300'></img></p>
+      <p><strong>No response is needed.</strong></p>
+      <p>Just think about what is happening in the scene and what facial expression is behind the white circle.</p>
       <p>Click <strong>'Next'</strong> to continue to the next instructions:<p>
       `,
       choices: ['Next']
@@ -99,7 +99,7 @@
       <p style="color: white";>.</p>
       <p>You will have the option of choosing between these 3 different emojis:</p>
       <p><img src='6basicemotions.png' width='300'></img></p>
-      <p>Press the key [f, g, h] that corresponds to the emoji you think <strong>BEST represents the covered face</strong> from the last scene.</p>
+      <p>Press the key <strong>[f, g, h]</strong> that corresponds to the emoji you think <strong>BEST represents the covered face</strong> from the last scene.</p>
       <p style="color: white";>.</p>
       <p>Click <strong>'Next'</strong> to continue to the next instructions:<p>
       `,
@@ -169,7 +169,7 @@
       type: jsPsychImageKeyboardResponse,
       stimulus: jsPsych.timelineVariable('stimulus'),
       choices: "NO_KEYS",
-      trial_duration: 7000,
+      trial_duration: 5000,
       data: {
         task: 'scene',
         correct_response: jsPsych.timelineVariable('correct_emoji')
@@ -226,37 +226,37 @@
     const IA_questions = [
           {
             prompt: "I often get distracted when someone is speaking to me (e.g., my parents, teacher, and so on).", 
-            name: 'inattentionA', 
+            name: 'inattention', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
           {
             prompt: "I often forget to bring the things I need for school when I leave home or forget to bring stuff home from school (e.g., homework, pencil, other school supplies).", 
-            name: 'inattentionB', 
+            name: 'inattention', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
           {
             prompt: "People often tell me that I am forgetful.", 
-            name: 'inattentionC', 
+            name: 'inattention', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
           {
             prompt: "I am always focused and can stay on task and follow the rules until the work is done.", 
-            name: 'inattentionD_reverse', 
+            name: 'inattention_reverse', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
           {
             prompt: "I’m organized and can hand in all my schoolwork and chores done on time.", 
-            name: 'inattentionE_reverse', 
+            name: 'inattention_reverse', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
           {
             prompt: "I am able to work on different tasks and activities for long periods of time.", 
-            name: 'inattentionF_reverse', 
+            name: 'inattention_reverse', 
             options: ['Agree', 'Disagree'], 
             required: true
           }, 
@@ -299,38 +299,38 @@
     const questions_HI = [
           {
             prompt: "I fidget a lot when I am sitting.", 
-            name: 'hyperactivityA', 
+            name: 'hyperactivity', 
             options: ['Agree', 'Disagree'], 
             required: true
           }, 
           {
             prompt: "I cannot wait my turn in a conversation and have to respond to someone right away before they finish speaking.", 
-            name: 'hyperactivityB', 
+            name: 'hyperactivity', 
             options: ['Agree', 'Disagree'], 
             required: true       
           },
           {
             prompt: "I need to be up and moving and can’t sit for an entire class.", 
-            name: 'hyperactivityC', 
+            name: 'hyperactivity', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
           {
             prompt: "I only speak in class when I am called on and don’t talk over others.", 
-            name: 'hyperactivityD_reverse', 
+            name: 'hyperactivity_reverse', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
           
           {
             prompt: "My teacher doesn’t have to tell me to sit back in my seat when I am not allowed to be up or lower my voice during class time.", 
-            name: 'hyperactivityE_reverse', 
+            name: 'hyperactivity_reverse', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
           {
             prompt: "I will wait my turn when waiting in line for something and don’t try to cut in front of others.", 
-            name: 'hyperactivityF_reverse', 
+            name: 'hyperactivity_reverse', 
             options: ['Agree', 'Disagree'], 
             required: true
           },
@@ -347,7 +347,7 @@
       preamble: "<strong>Survey (part 3/5)</strong>",
       button_label: 'Next',
       data: {
-        task: 'HI_index',
+        task: 'HI_index'
       }
     };
 
@@ -400,7 +400,7 @@
       type: jsPsychHtmlButtonResponse,
       stimulus: `
       <p>Thank you for participating in this study!</p>
-      <div><img src='thankYou.webp'></img></div>
+      <div><img src='thankYou.png'></img></div>
       <p>Click the 'Exit' button below to finish the experiment:</p>`,
       choices: ['Exit']
     };
