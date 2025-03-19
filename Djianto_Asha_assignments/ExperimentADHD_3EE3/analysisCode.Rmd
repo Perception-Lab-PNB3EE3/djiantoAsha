@@ -1,0 +1,161 @@
+---
+title: "Analysis Code"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+# Loading in all .csv files together
+```{r}
+csv_files <- list.files(path = "C:/Users/djian/Downloads/PNB3EE3/djiantoAsha/Djianto_Asha_assignments/ExperimentADHD_3EE3/simulated_data", pattern = "\\.csv$", full.names = TRUE)
+
+# Read all the CSV files and combine them into one data frame
+rawdata <- do.call(rbind, lapply(csv_files, function(file) {
+  data <- read.csv(file)               # Read the CSV file
+  data$file_source <- basename(file)   # Add a new column with the file name
+  return(data)
+}))
+
+rawdata$rt <- as.numeric(rawdata$rt)
+# View the combined data
+head(rawdata)
+View(rawdata)
+
+library(dplyr)
+
+```
+
+# Participant's ADHD symptom level
+```{r}
+
+survey <- subset(rawdata, select = -c(success, timeout, failed_images, failed_audio, failed_video, plugin_version, question_order, trial_index, time_elapsed))
+survey <- survey[(which(survey$trial_type %in% "survey-multi-choice")),]
+
+
+table(survey['response'])
+
+Group_assignment <- survey %>%
+  group_by(file_source) %>%
+  summarize(positive_symptoms = sum(
+      length(which(response == '{"inattention":"Agree"}')) +
+      length(which(response == '{"hyperactivity":"Agree"}')) +
+      length(which(response == '{"inattention_reverse":"Disagree"}')) +
+      length(which(response == '{"hyperactivity_reverse":"Disagree"}'))
+    )
+    ) %>%
+  mutate(
+    Group = case_when(
+      positive_symptoms >= 6 ~ "ADHD",
+      positive_symptoms <= 5 & positive_symptoms >= 3 ~ "Subthreshold",
+      positive_symptoms <= 2 ~ "TD"
+    )
+  )
+
+View(Group_assignment)
+
+```
+Add up the survey question responses that correspond to positive symptoms of ADHD then group participants based on their score. ADHD group is 6 or more symptoms, subthreshold group is 3-5 symptoms, and the TD group is less than 3 symptoms.
+
+
+
+# Participant RT per emotion type
+```{r}
+# NOTE: f = happy, g = sad, h = angry
+# 8 trials per emotion type
+
+
+# HAPPY DATA
+happy_data <- subset(rawdata, select = -c(success, timeout, failed_images, failed_audio, failed_video, plugin_version, question_order, trial_index, time_elapsed, trial_type, task, stimulus))
+happy_data <- happy_data[(which(happy_data$correct_response %in% "f")),]
+happy_data <- happy_data %>%
+  group_by(file_source)        # Group by file source
+
+# filter only correct happy trials
+correct_only_happy <- happy_data %>%
+  filter(correct == 'true')
+
+
+# filter out trials that have no correct happy trials
+files_with_no_true <- happy_data %>%
+  group_by(file_source) %>%
+  summarize(has_true = any(correct == 'true')) %>%
+  filter(has_true == FALSE) %>%
+  pull(file_source)
+
+files_with_no_true_rows <- happy_data %>%
+  filter(file_source %in% files_with_no_true & correct == 'false')
+
+# combine the files that have true correct happy trials & the one with no true correct happy trials
+final_happy_data <- bind_rows(correct_only_happy, files_with_no_true_rows)
+View(final_happy_data)
+
+
+mean_rt_happy <- final_happy_data %>%
+  group_by(file_source) %>%
+  summarize(mean_rt_happy = mean(rt))
+
+View(mean_rt_happy)
+
+sd_rt_happy <- correctOnly_happy %>%
+  summarize(sd_rt_happy = sd(rt))
+
+View(sd_rt_happy)
+
+
+# SAD DATA
+
+sad_data <- subset(rawdata, select = -c(success, timeout, failed_images, failed_audio, failed_video, plugin_version, question_order, trial_index, time_elapsed, trial_type, task, stimulus))
+sad_data <- sad_data[(which(sad_data$correct_response %in% "g")),]
+sad_data <- sad_data %>%
+  group_by(file_source)        # Group by file source
+
+View(sad_data)
+
+correctOnly_sad <- (sad_data[which(sad_data$correct == 'true'),])
+
+mean_rt_sad <- correctOnly_sad %>%
+  summarize(mean_rt_sad = mean(rt))
+
+View(mean_rt_sad)
+
+sd_rt_sad <- correctOnly_sad %>%
+  summarize(sd_rt_sad = sd(rt))
+
+View(sd_rt_sad)
+
+
+# ANGRY DATA
+angry_data <- subset(rawdata, select = -c(success, timeout, failed_images, failed_audio, failed_video, plugin_version, question_order, trial_index, time_elapsed, trial_type, task, stimulus))
+angry_data <- angry_data[(which(angry_data$correct_response %in% "h")),]
+
+View(angry_data)
+
+correctOnly_angry <- (angry_data[which(angry_data$correct == 'true'),])
+
+mean_rt_angry <- mean(as.numeric(correctOnly_angry$rt)) # class of rt data was "character", so must change to "numeric" to calculate mean
+sd_rt_angry <- sd(as.numeric(correctOnly_angry$rt))
+
+percent_correct_angry <- ((length(which(angry_data$correct == 'true'))) / (length(angry_data$correct)))*100
+
+
+# Organizing participant's Descriptive statistics in a table:
+
+
+```
+
+# Group RT per emotion type
+```{r}
+View(Group_assignment)
+
+combined_df <- bind_cols(Group_assignment, mean_rt_happy)
+
+
+```
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

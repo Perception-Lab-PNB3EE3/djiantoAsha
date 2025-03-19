@@ -17,7 +17,7 @@
     
     var jsPsych = initJsPsych({
       on_finish: function() {
-        jsPsych.data.get().localSave('csv', 'mydata.csv');
+        jsPsych.data.get().localSave('csv', 'simData7.csv');
         jsPsych.data.displayData();
       }
     });
@@ -222,160 +222,216 @@
     };
     timeline.push(ADHD_survey_instructions);
 
-// inattention questions 
-    const IA_questions = [
-          {
-            prompt: "I often get distracted when someone is speaking to me (e.g., my parents, teacher, and so on).", 
-            name: 'inattention', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          {
-            prompt: "I often forget to bring the things I need for school when I leave home or forget to bring stuff home from school (e.g., homework, pencil, other school supplies).", 
-            name: 'inattention', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          {
-            prompt: "People often tell me that I am forgetful.", 
-            name: 'inattention', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          {
-            prompt: "I am always focused and can stay on task and follow the rules until the work is done.", 
-            name: 'inattention_reverse', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          {
-            prompt: "I’m organized and can hand in all my schoolwork and chores done on time.", 
-            name: 'inattention_reverse', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          {
-            prompt: "I am able to work on different tasks and activities for long periods of time.", 
-            name: 'inattention_reverse', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          }, 
-          ];
+//  questions 
 
-    // Shuffles and pops first n elements of Array
-    // Returns pair, first element is n random popped elements, second is remaining Array
-    function shuffle_and_pop_n(arr, n) {
-      shuffled_arr = jsPsych.randomization.shuffle(arr);
-      return [shuffled_arr.slice(0,n), shuffled_arr.slice(n)];
-    }
-    
-    var result = shuffle_and_pop_n(Array.from(IA_questions), 3);
-    const first_3_ques = result[0];
-    var remaining = result[1];
-    
-    const inattention_survey_p1 = {
-        type: jsPsychSurveyMultiChoice,
-        questions: first_3_ques,
-          repetitions: 3,
-      preamble: "<strong>Survey (part 1/5)</strong>",
+    const Q1 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I often get distracted when someone is speaking to me (e.g., my parents, teacher, and so on).", 
+          name: 'inattention', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
       button_label: 'Next',
       data: {
-        task: 'inattention_index'
+        task: 'survey'
+      }
+    };
+    
+    const Q2 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I often forget to bring the things I need for school when I leave home or forget to bring stuff home from school (e.g., homework, pencil, other school supplies).", 
+          name: 'inattention', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
+      button_label: 'Next',
+      data: {
+        task: 'survey'
       }
     };
 
-    const inattention_survey_p2 = {
-        type: jsPsychSurveyMultiChoice,
-        questions: Array.from(remaining),
-          repetitions: 3,
-      preamble: "<strong>Survey (part 2/5)</strong>",
+    const Q3 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "People often tell me that I am forgetful.", 
+          name: 'inattention', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
       button_label: 'Next',
       data: {
-        task: 'inattention_index'
+        task: 'survey'
       }
+      
+    };
+ 
+    const Q4 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I am always focused and can stay on task and follow the rules until the work is done.", 
+          name: 'inattention_reverse', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
+      button_label: 'Next',
+      data: {
+        task: 'survey'
+      }
+      
     };
 
-// hyperactivity + impulsivity
-    const questions_HI = [
-          {
-            prompt: "I fidget a lot when I am sitting.", 
-            name: 'hyperactivity', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          }, 
-          {
-            prompt: "I cannot wait my turn in a conversation and have to respond to someone right away before they finish speaking.", 
-            name: 'hyperactivity', 
-            options: ['Agree', 'Disagree'], 
-            required: true       
-          },
-          {
-            prompt: "I need to be up and moving and can’t sit for an entire class.", 
-            name: 'hyperactivity', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          {
-            prompt: "I only speak in class when I am called on and don’t talk over others.", 
-            name: 'hyperactivity_reverse', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          
-          {
-            prompt: "My teacher doesn’t have to tell me to sit back in my seat when I am not allowed to be up or lower my voice during class time.", 
-            name: 'hyperactivity_reverse', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          {
-            prompt: "I will wait my turn when waiting in line for something and don’t try to cut in front of others.", 
-            name: 'hyperactivity_reverse', 
-            options: ['Agree', 'Disagree'], 
-            required: true
-          },
-          ];
+    const Q5 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I’m organized and can hand in all my schoolwork and chores done on time.", 
+          name: 'inattention_reverse', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
+      button_label: 'Next',
+      data: {
+        task: 'survey'
+      }
+      
+    };
 
-    var resultHI = shuffle_and_pop_n(Array.from(questions_HI), 3);
-    const first_3_quesHI = resultHI[0];
-    var remainingHI = resultHI[1];
+    const Q6 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I am able to work on different tasks and activities for long periods of time.", 
+          name: 'inattention_reverse', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
+      button_label: 'Next',
+      data: {
+        task: 'survey'
+      }
+      
+    };
+
+    const Q7 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I fidget a lot when I am sitting.", 
+          name: 'hyperactivity', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
+      button_label: 'Next',
+      data: {
+        task: 'survey'
+      }
+      
+    };
+  
+    const Q8 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I cannot wait my turn in a conversation and have to respond to someone right away before they finish speaking.", 
+          name: 'hyperactivity', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
+      button_label: 'Next',
+      data: {
+        task: 'survey'
+      }
+      
+    };
+
+    const Q9 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I need to be up and moving and can’t sit for an entire class.", 
+          name: 'hyperactivity', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
+      button_label: 'Next',
+      data: {
+        task: 'survey'
+      }
+      
+    };
     
-    const HI_survey_p1 = {
-        type: jsPsychSurveyMultiChoice,
-        questions: first_3_quesHI,
-          repetitions: 3,
-      preamble: "<strong>Survey (part 3/5)</strong>",
+    const Q10 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I only speak in class when I am called on and don’t talk over others.", 
+          name: 'hyperactivity_reverse', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
       button_label: 'Next',
       data: {
-        task: 'HI_index'
+        task: 'survey'
       }
+      
     };
 
-    const HI_survey_p2 = {
-        type: jsPsychSurveyMultiChoice,
-        questions: Array.from(remainingHI),
-          repetitions: 3,
-      preamble: "<strong>Survey (part 4/5)</strong>",
+    const Q11 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "My teacher doesn’t have to tell me to sit back in my seat when I am not allowed to be up or lower my voice during class time.", 
+          name: 'hyperactivity_reverse', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
       button_label: 'Next',
       data: {
-        task: 'HI_index'
+        task: 'survey'
       }
-
+      
     };
     
-    var surveyIA_procedure = {
-      timeline: [inattention_survey_p1, inattention_survey_p2],
-      timeline_variables: [IA_questions], 
-      randomize_order: false
+    const Q12 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: "I will wait my turn when waiting in line for something and don’t try to cut in front of others.", 
+          name: 'hyperactivity_reverse', 
+          options: ['Agree', 'Disagree'], 
+          required: true
+        }
+      ],
+      button_label: 'Next',
+      data: {
+        task: 'survey'
+      }
+      
     };
-    timeline.push(surveyIA_procedure);
 
-    var surveyHI_procedure = {
-      timeline: [HI_survey_p1, HI_survey_p2],
-      timeline_variables: [IA_questions], 
-      randomize_order: false
+
+    const survey_procedure = {
+      timeline: jsPsych.randomization.shuffle([Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12]),
     };
-    timeline.push(surveyHI_procedure);
+    
+    timeline.push(survey_procedure);
 
     const gender = {
         type: jsPsychSurveyMultiChoice,
@@ -384,7 +440,6 @@
           name: 'gender', 
           options: ['Girl', 'Boy'], 
           required: true}],
-      preamble: "<strong>Survey (part 5/5)</strong>",
       button_label: 'Submit Survey',
       data: {
         task: 'gender'
@@ -405,36 +460,11 @@
       choices: ['Exit']
     };
     timeline.push(thankyou_trial);
-
-/////////////////////////////////////////////////////////////////////////// Debrief block
-    
         
-        var trials = jsPsych.data.get().filter({task: 'correct'});               // getting all FER trials
-        var correct_trials = trials.filter({correct: 'TRUE'});                      // getting all correctly matched FER trials
-        var accuracy = Math.round(correct_trials.count() / trials.count() * 100); // % accuracy on FER trials overall
-        var rt = Math.round(correct_trials.select('rt').mean());
-        
-        // trails correct for each emotion
-        var happy_correct = correct_trials.filter({correct_response: 'f'});
-        var sad_correct = correct_trials.filter({correct_response: 'g'});
-        var angry_correct = correct_trials.filter({correct_response: 'h'});
-        
-        // mean rt for each emotion
-        var happy_rt = Math.round(happy_correct.select('rt').mean());
-        var sad_rt = Math.round(sad_correct.select('rt').mean());
-        var angry_rt = Math.round(angry_correct.select('rt').mean());
-        
-    var debrief_block = {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: `<p>trials = ${trials}</p>
-      <p>happy_correct = ${happy_correct.count()}, sad_correct = ${sad_correct.count()}, angry_correct = ${angry_correct.count()}</p>
-      <p>happy_rt = ${happy_rt}ms, sad_rt = ${sad_rt}ms, angry_rt = ${angry_rt}ms</p>
-      `
-    };
-    //timeline.push(debrief_block);
+  
 
     
-    jsPsych.run(timeline);
+    jsPsych.simulate(timeline);
 
   </script>
 </html>

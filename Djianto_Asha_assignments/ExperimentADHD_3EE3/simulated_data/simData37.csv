@@ -1,0 +1,144 @@
+"success","timeout","failed_images","failed_audio","failed_video","trial_type","trial_index","plugin_version","time_elapsed","stimulus","rt","response","question_order","task","correct_response","correct"
+"true","false","[]","[]","[]","preload","0","2.1.0","2","","","","","","",""
+"","","","","","html-button-response","1","2.1.0","2","
+      <p><strong>Welcome to the study!</strong></p>
+      <p>Click the button below to continue to the 'Experiment Consent Form':</p>
+      ","530","0","","","",""
+"","","","","","survey-multi-choice","2","2.1.0","3","","2976","{""DataConsent"":""Yes""}","[0]","","",""
+"","","","","","html-button-response","3","2.1.0","3","<p><strong>Instructions</strong>
+      <p style=""color: white"";>.</p>
+      <p>At the start of every trial, a '+' sign will appear at the centre of the screen, telling you to focus on the centre.</p>
+      <p style=""color: white"";>.</p>
+      <p style=""color: white"";>.</p>
+      <p><div style=""font-size:60px;"">+</div></p>
+      <p style=""color: white"";>.</p>
+      <p style=""color: white"";>.</p>
+
+      <p>Click <strong>'Next'</strong> to continue to the next instructions:<p>
+      ","524","0","","","",""
+"","","","","","html-button-response","4","2.1.0","3","<p>After, a picture will appear of a scene for a couple of seconds. One of the people's faces will be covered by a white circle like this:</p>
+      <p><img src='instructions_example_img.png' width='300'></img></p>
+      <p><strong>No response is needed.</strong></p>
+      <p>Just think about what is happening in the scene and what facial expression is behind the white circle.</p>
+      <p>Click <strong>'Next'</strong> to continue to the next instructions:<p>
+      ","595","0","","","",""
+"","","","","","html-button-response","5","2.1.0","3","<p>The screen will automatically change to the response screen.</p>
+      <p style=""color: white"";>.</p>
+      <p>You will have the option of choosing between these 3 different emojis:</p>
+      <p><img src='6basicemotions.png' width='300'></img></p>
+      <p>Press the key <strong>[f, g, h]</strong> that corresponds to the emoji you think <strong>BEST represents the covered face</strong> from the last scene.</p>
+      <p style=""color: white"";>.</p>
+      <p>Click <strong>'Next'</strong> to continue to the next instructions:<p>
+      ","545","0","","","",""
+"","","","","","html-button-response","6","2.1.0","4","<p>You will do this for multiple trials.</p>
+      <p>Try to respond as soon as you know the answer.</p>
+      <p style=""color: white"";>.</p>
+      <p>Once all trials are completed, you will be asked to fill out a quick survey.</p>
+      <p>All responses will be completely anonymous.</p>
+
+
+      <p style=""color: white"";>.</p>
+      <p>Click <strong>'Start'</strong> to start the experiment!:<p>
+      ","650","0","","","",""
+"","","","","","html-keyboard-response","7","2.1.0","4","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","8","2.1.0","4","happy_img/happyChild4.png","null","null","","scene","happy.png",""
+"","","","","","image-keyboard-response","9","2.1.0","5","6basicemotions.png","546","g","","response","f","false"
+"","","","","","html-keyboard-response","10","2.1.0","5","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","11","2.1.0","5","sad_img/sadChild1.png","null","null","","scene","sad.png",""
+"","","","","","image-keyboard-response","12","2.1.0","6","6basicemotions.png","516","g","","response","g","true"
+"","","","","","html-keyboard-response","13","2.1.0","6","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","14","2.1.0","6","happy_img/happyChild8.png","null","null","","scene","happy.png",""
+"","","","","","image-keyboard-response","15","2.1.0","6","6basicemotions.png","684","h","","response","f","false"
+"","","","","","html-keyboard-response","16","2.1.0","7","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","17","2.1.0","7","happy_img/happyChild5.png","null","null","","scene","happy.png",""
+"","","","","","image-keyboard-response","18","2.1.0","7","6basicemotions.png","471","g","","response","f","false"
+"","","","","","html-keyboard-response","19","2.1.0","7","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","20","2.1.0","7","angry_img/angryChild7.png","null","null","","scene","angry.png",""
+"","","","","","image-keyboard-response","21","2.1.0","7","6basicemotions.png","699","f","","response","h","false"
+"","","","","","html-keyboard-response","22","2.1.0","8","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","23","2.1.0","8","angry_img/angryChild6.png","null","null","","scene","angry.png",""
+"","","","","","image-keyboard-response","24","2.1.0","8","6basicemotions.png","606","f","","response","h","false"
+"","","","","","html-keyboard-response","25","2.1.0","8","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","26","2.1.0","8","angry_img/angryChild4.png","null","null","","scene","angry.png",""
+"","","","","","image-keyboard-response","27","2.1.0","8","6basicemotions.png","501","f","","response","h","false"
+"","","","","","html-keyboard-response","28","2.1.0","8","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","29","2.1.0","8","angry_img/angryChild2.png","null","null","","scene","angry.png",""
+"","","","","","image-keyboard-response","30","2.1.0","9","6basicemotions.png","657","h","","response","h","true"
+"","","","","","html-keyboard-response","31","2.1.0","9","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","32","2.1.0","9","angry_img/angryChild3.png","null","null","","scene","angry.png",""
+"","","","","","image-keyboard-response","33","2.1.0","9","6basicemotions.png","648","f","","response","h","false"
+"","","","","","html-keyboard-response","34","2.1.0","9","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","35","2.1.0","9","angry_img/angryChild1.png","null","null","","scene","angry.png",""
+"","","","","","image-keyboard-response","36","2.1.0","9","6basicemotions.png","654","g","","response","h","false"
+"","","","","","html-keyboard-response","37","2.1.0","9","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","38","2.1.0","9","sad_img/sadChild6.png","null","null","","scene","sad.png",""
+"","","","","","image-keyboard-response","39","2.1.0","9","6basicemotions.png","539","f","","response","g","false"
+"","","","","","html-keyboard-response","40","2.1.0","9","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","41","2.1.0","10","sad_img/sadChild4.png","null","null","","scene","sad.png",""
+"","","","","","image-keyboard-response","42","2.1.0","10","6basicemotions.png","630","g","","response","g","true"
+"","","","","","html-keyboard-response","43","2.1.0","10","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","44","2.1.0","10","happy_img/happyChild3.png","null","null","","scene","happy.png",""
+"","","","","","image-keyboard-response","45","2.1.0","10","6basicemotions.png","661","g","","response","f","false"
+"","","","","","html-keyboard-response","46","2.1.0","10","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","47","2.1.0","10","happy_img/happyChild6.png","null","null","","scene","happy.png",""
+"","","","","","image-keyboard-response","48","2.1.0","10","6basicemotions.png","617","g","","response","f","false"
+"","","","","","html-keyboard-response","49","2.1.0","10","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","50","2.1.0","10","sad_img/sadChild3.png","null","null","","scene","sad.png",""
+"","","","","","image-keyboard-response","51","2.1.0","10","6basicemotions.png","523","f","","response","g","false"
+"","","","","","html-keyboard-response","52","2.1.0","11","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","53","2.1.0","11","happy_img/happyChild2.png","null","null","","scene","happy.png",""
+"","","","","","image-keyboard-response","54","2.1.0","11","6basicemotions.png","586","f","","response","f","true"
+"","","","","","html-keyboard-response","55","2.1.0","11","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","56","2.1.0","11","sad_img/sadChild7.png","null","null","","scene","sad.png",""
+"","","","","","image-keyboard-response","57","2.1.0","11","6basicemotions.png","772","h","","response","g","false"
+"","","","","","html-keyboard-response","58","2.1.0","11","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","59","2.1.0","11","sad_img/sadChild8.png","null","null","","scene","sad.png",""
+"","","","","","image-keyboard-response","60","2.1.0","11","6basicemotions.png","768","g","","response","g","true"
+"","","","","","html-keyboard-response","61","2.1.0","11","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","62","2.1.0","11","happy_img/happyChild1.png","null","null","","scene","happy.png",""
+"","","","","","image-keyboard-response","63","2.1.0","12","6basicemotions.png","549","h","","response","f","false"
+"","","","","","html-keyboard-response","64","2.1.0","12","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","65","2.1.0","12","sad_img/sadChild2.png","null","null","","scene","sad.png",""
+"","","","","","image-keyboard-response","66","2.1.0","12","6basicemotions.png","691","h","","response","g","false"
+"","","","","","html-keyboard-response","67","2.1.0","12","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","68","2.1.0","12","angry_img/angryChild8.png","null","null","","scene","angry.png",""
+"","","","","","image-keyboard-response","69","2.1.0","12","6basicemotions.png","690","f","","response","h","false"
+"","","","","","html-keyboard-response","70","2.1.0","12","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","71","2.1.0","12","happy_img/happyChild7.png","null","null","","scene","happy.png",""
+"","","","","","image-keyboard-response","72","2.1.0","12","6basicemotions.png","584","g","","response","f","false"
+"","","","","","html-keyboard-response","73","2.1.0","13","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","74","2.1.0","13","angry_img/angryChild5.png","null","null","","scene","angry.png",""
+"","","","","","image-keyboard-response","75","2.1.0","13","6basicemotions.png","427","h","","response","h","true"
+"","","","","","html-keyboard-response","76","2.1.0","13","<div style=""font-size:60px;"">+</div>","null","null","","fixation","",""
+"","","","","","image-keyboard-response","77","2.1.0","13","sad_img/sadChild5.png","null","null","","scene","sad.png",""
+"","","","","","image-keyboard-response","78","2.1.0","13","6basicemotions.png","544","h","","response","g","false"
+"","","","","","html-button-response","79","2.1.0","13","<p><strong>Congratulations! You have completed the first part of the experiment!</strong></p>
+      <p>This last part is a survey on how you work in the classroom and at home.</p>
+      <p><strong>Steps:</strong></p>
+
+      <p>1) Read the statement.</p>
+
+      <p>2) If you think that the statement describes you, click <strong>'Agree'</strong></p>
+      <p>If you think that the statement DOES NOT describe you, click <strong>'Disagree'</strong>.</p>
+      
+      <p>3) Click the 'Next' button to move on to the next set of questions</p>
+      <p>4) At the end of the survey, click the 'Submit Survey' button when you have completed all the questions</p>
+
+      ","604","0","","","",""
+"","","","","","survey-multi-choice","80","2.1.0","14","","2513","{""hyperactivity_reverse"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","81","2.1.0","14","","2559","{""inattention_reverse"":""Agree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","82","2.1.0","14","","2625","{""hyperactivity"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","83","2.1.0","14","","2560","{""hyperactivity"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","84","2.1.0","14","","2658","{""hyperactivity"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","85","2.1.0","14","","2906","{""hyperactivity_reverse"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","86","2.1.0","14","","2130","{""hyperactivity_reverse"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","87","2.1.0","15","","3288","{""inattention"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","88","2.1.0","15","","2716","{""inattention_reverse"":""Agree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","89","2.1.0","15","","3251","{""inattention_reverse"":""Agree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","90","2.1.0","15","","2599","{""inattention"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","91","2.1.0","15","","2648","{""inattention"":""Disagree""}","[0]","survey","",""
+"","","","","","survey-multi-choice","92","2.1.0","15","","3149","{""gender"":""Boy""}","[0]","gender","",""
+"","","","","","html-button-response","93","2.1.0","15","
+      <p>Thank you for participating in this study!</p>
+      <div><img src='thankYou.png'></img></div>
+      <p>Click the 'Exit' button below to finish the experiment:</p>","490","0","","","",""

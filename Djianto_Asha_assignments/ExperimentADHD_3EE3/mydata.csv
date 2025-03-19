@@ -1,0 +1,136 @@
+success,timeout,failed_images,failed_audio,failed_video,trial_type,trial_index,plugin_version,time_elapsed,rt,stimulus,response,question_order,task,correct_response,correct
+TRUE,FALSE,[],[],[],preload,0,2.1.0,48,,,,,,,
+,,,,,html-button-response,1,2.1.0,13538,13489,"
+      <p><strong>Welcome to the study!</strong></p>
+      <p>Click the button below to continue to the 'Experiment Consent Form':</p>
+      ",0,,,,
+,,,,,survey-multi-choice,2,2.1.0,15599,2058,,"{""DataConsent"":""Yes""}",[0],,,
+,,,,,html-button-response,3,2.1.0,16633,1030,"<p><strong>Instructions</strong>
+      <p style=""color: white"";>.</p>
+      <p>At the start of every trial, a '+' sign will appear at the centre of the screen, telling you to focus on the centre.</p>
+      <p style=""color: white"";>.</p>
+      <p style=""color: white"";>.</p>
+      <p><div style=""font-size:60px;"">+</div></p>
+      <p style=""color: white"";>.</p>
+      <p style=""color: white"";>.</p>
+
+      <p>Click <strong>'Next'</strong> to continue to the next instructions:<p>
+      ",0,,,,
+,,,,,html-button-response,4,2.1.0,18579,1945,"<p>After, a picture will appear of a scene for a couple of seconds. One of the people's faces will be covered by a white circle like this:</p>
+      <p><img src='happy_img/happyChild1.png' width='300'></img></p>
+      <p>Think about what is happening in the scene and what facial expression is behind the white circle.</p>
+      <p style=""color: white"";>.</p>
+      <p>Click <strong>'Next'</strong> to continue to the next instructions:<p>
+      ",0,,,,
+,,,,,html-button-response,5,2.1.0,19031,450,"<p>The screen will automatically change to the response screen.</p>
+      <p style=""color: white"";>.</p>
+      <p>You will have the option of choosing between these 3 different emojis:</p>
+      <p><img src='6basicemotions.png' width='300'></img></p>
+      <p>Press the key [f, g, h] that corresponds to the emoji you think <strong>BEST represents the covered face</strong> from the last scene.</p>
+      <p style=""color: white"";>.</p>
+      <p>Click <strong>'Next'</strong> to continue to the next instructions:<p>
+      ",0,,,,
+,,,,,html-button-response,6,2.1.0,20336,1304,"<p>You will do this for multiple trials.</p>
+      <p>Try to respond as soon as you know the answer.</p>
+      <p style=""color: white"";>.</p>
+      <p>Once all trials are completed, you will be asked to fill out a quick survey.</p>
+      <p>All responses will be completely anonymous.</p>
+
+
+      <p style=""color: white"";>.</p>
+      <p>Click <strong>'Start'</strong> to start the experiment!:<p>
+      ",0,,,,
+,,,,,html-keyboard-response,7,2.1.0,24360,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,8,2.1.0,31369,null,sad_img/sadChild2.png,null,,scene,sad.png,
+,,,,,image-keyboard-response,9,2.1.0,32629,1257,6basicemotions.png,g,,response,g,TRUE
+,,,,,html-keyboard-response,10,2.1.0,34639,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,11,2.1.0,41655,null,angry_img/angryChild6.png,null,,scene,angry.png,
+,,,,,image-keyboard-response,12,2.1.0,43004,1348,6basicemotions.png,h,,response,h,TRUE
+,,,,,html-keyboard-response,13,2.1.0,45006,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,14,2.1.0,52010,null,angry_img/angryChild1.png,null,,scene,angry.png,
+,,,,,image-keyboard-response,15,2.1.0,52559,547,6basicemotions.png,h,,response,h,TRUE
+,,,,,html-keyboard-response,16,2.1.0,54565,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,17,2.1.0,61573,null,sad_img/sadChild3.png,null,,scene,sad.png,
+,,,,,image-keyboard-response,18,2.1.0,62596,1021,6basicemotions.png,g,,response,g,TRUE
+,,,,,html-keyboard-response,19,2.1.0,64601,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,20,2.1.0,71611,null,sad_img/sadChild1.png,null,,scene,sad.png,
+,,,,,image-keyboard-response,21,2.1.0,72310,698,6basicemotions.png,g,,response,g,TRUE
+,,,,,html-keyboard-response,22,2.1.0,74319,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,23,2.1.0,81326,null,happy_img/happyChild4.png,null,,scene,happy.png,
+,,,,,image-keyboard-response,24,2.1.0,81748,419,6basicemotions.png,f,,response,f,TRUE
+,,,,,html-keyboard-response,25,2.1.0,83752,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,26,2.1.0,90754,null,angry_img/angryChild3.png,null,,scene,angry.png,
+,,,,,image-keyboard-response,27,2.1.0,91196,440,6basicemotions.png,h,,response,h,TRUE
+,,,,,html-keyboard-response,28,2.1.0,93204,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,29,2.1.0,100211,null,happy_img/happyChild7.png,null,,scene,happy.png,
+,,,,,image-keyboard-response,30,2.1.0,100897,684,6basicemotions.png,f,,response,f,TRUE
+,,,,,html-keyboard-response,31,2.1.0,102901,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,32,2.1.0,109910,null,happy_img/happyChild6.png,null,,scene,happy.png,
+,,,,,image-keyboard-response,33,2.1.0,110328,416,6basicemotions.png,f,,response,f,TRUE
+,,,,,html-keyboard-response,34,2.1.0,112337,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,35,2.1.0,119344,null,happy_img/happyChild8.png,null,,scene,happy.png,
+,,,,,image-keyboard-response,36,2.1.0,120311,965,6basicemotions.png,f,,response,f,TRUE
+,,,,,html-keyboard-response,37,2.1.0,122314,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,38,2.1.0,129318,null,angry_img/angryChild5.png,null,,scene,angry.png,
+,,,,,image-keyboard-response,39,2.1.0,130026,707,6basicemotions.png,h,,response,h,TRUE
+,,,,,html-keyboard-response,40,2.1.0,132034,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,41,2.1.0,139040,null,angry_img/angryChild4.png,null,,scene,angry.png,
+,,,,,image-keyboard-response,42,2.1.0,139394,353,6basicemotions.png,h,,response,h,TRUE
+,,,,,html-keyboard-response,43,2.1.0,141410,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,44,2.1.0,148416,null,angry_img/angryChild2.png,null,,scene,angry.png,
+,,,,,image-keyboard-response,45,2.1.0,149120,702,6basicemotions.png,h,,response,h,TRUE
+,,,,,html-keyboard-response,46,2.1.0,151127,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,47,2.1.0,158131,null,angry_img/angryChild8.png,null,,scene,angry.png,
+,,,,,image-keyboard-response,48,2.1.0,158527,394,6basicemotions.png,h,,response,h,TRUE
+,,,,,html-keyboard-response,49,2.1.0,160535,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,50,2.1.0,167543,null,sad_img/sadChild4.png,null,,scene,sad.png,
+,,,,,image-keyboard-response,51,2.1.0,167945,401,6basicemotions.png,g,,response,g,TRUE
+,,,,,html-keyboard-response,52,2.1.0,169949,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,53,2.1.0,176960,null,happy_img/happyChild1.png,null,,scene,happy.png,
+,,,,,image-keyboard-response,54,2.1.0,177493,532,6basicemotions.png,f,,response,f,TRUE
+,,,,,html-keyboard-response,55,2.1.0,179503,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,56,2.1.0,186510,null,sad_img/sadChild7.png,null,,scene,sad.png,
+,,,,,image-keyboard-response,57,2.1.0,186963,450,6basicemotions.png,g,,response,g,TRUE
+,,,,,html-keyboard-response,58,2.1.0,188968,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,59,2.1.0,195976,null,angry_img/angryChild7.png,null,,scene,angry.png,
+,,,,,image-keyboard-response,60,2.1.0,196261,284,6basicemotions.png,h,,response,h,TRUE
+,,,,,html-keyboard-response,61,2.1.0,198267,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,62,2.1.0,205273,null,sad_img/sadChild6.png,null,,scene,sad.png,
+,,,,,image-keyboard-response,63,2.1.0,205724,448,6basicemotions.png,g,,response,g,TRUE
+,,,,,html-keyboard-response,64,2.1.0,207727,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,65,2.1.0,214733,null,sad_img/sadChild8.png,null,,scene,sad.png,
+,,,,,image-keyboard-response,66,2.1.0,215194,459,6basicemotions.png,g,,response,g,TRUE
+,,,,,html-keyboard-response,67,2.1.0,217201,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,68,2.1.0,224211,null,happy_img/happyChild3.png,null,,scene,happy.png,
+,,,,,image-keyboard-response,69,2.1.0,225995,1783,6basicemotions.png,f,,response,f,TRUE
+,,,,,html-keyboard-response,70,2.1.0,228005,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,71,2.1.0,235011,null,happy_img/happyChild5.png,null,,scene,happy.png,
+,,,,,image-keyboard-response,72,2.1.0,235505,492,6basicemotions.png,f,,response,f,TRUE
+,,,,,html-keyboard-response,73,2.1.0,237511,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,74,2.1.0,244518,null,happy_img/happyChild2.png,null,,scene,happy.png,
+,,,,,image-keyboard-response,75,2.1.0,245096,576,6basicemotions.png,f,,response,f,TRUE
+,,,,,html-keyboard-response,76,2.1.0,247110,null,"<div style=""font-size:60px;"">+</div>",null,,fixation,,
+,,,,,image-keyboard-response,77,2.1.0,254116,null,sad_img/sadChild5.png,null,,scene,sad.png,
+,,,,,image-keyboard-response,78,2.1.0,254477,360,6basicemotions.png,g,,response,g,TRUE
+,,,,,html-button-response,79,2.1.0,257738,3256,"<p><strong>Congratulations! You have completed the first part of the experiment!</strong></p>
+      <p>This last part is a survey on how you work in the classroom and at home.</p>
+      <p><strong>Steps:</strong></p>
+
+      <p>1) Read the statement.</p>
+
+      <p>2) If you think that the statement describes you, click <strong>'Agree'</strong></p>
+      <p>If you think that the statement DOES NOT describe you, click <strong>'Disagree'</strong>.</p>
+      
+      <p>3) Click the 'Next' button to move on to the next set of questions</p>
+      <p>4) At the end of the survey, click the 'Submit Survey' button when you have completed all the questions</p>
+
+      ",0,,,,
+,,,,,survey-multi-choice,80,2.1.0,263120,5377,,"{""inattentionC"":""Agree"",""inattentionE_reverse"":""Agree"",""inattentionA"":""Agree""}","[0,1,2]",inattention_index,,
+,,,,,survey-multi-choice,81,2.1.0,269115,5991,,"{""inattentionB"":""Agree"",""inattentionD_reverse"":""Agree"",""inattentionF_reverse"":""Agree""}","[0,1,2]",inattention_index,,
+,,,,,survey-multi-choice,82,2.1.0,274536,5416,,"{""hyperactivityE_reverse"":""Agree"",""hyperactivityD_reverse"":""Agree"",""hyperactivityB"":""Agree""}","[0,1,2]",HI_index,,
+,,,,,survey-multi-choice,83,2.1.0,278405,3865,,"{""hyperactivityF_reverse"":""Agree"",""hyperactivityA"":""Agree"",""hyperactivityC"":""Agree""}","[0,1,2]",HI_index,,
+,,,,,survey-multi-choice,84,2.1.0,280331,1923,,"{""gender"":""Girl""}",[0],gender,,
+,,,,,html-button-response,85,2.1.0,281903,1568,"
+      <p>Thank you for participating in this study!</p>
+      <div><img src='thankYou.webp'></img></div>
+      <p>Click the 'Exit' button below to finish the experiment:</p>",0,,,,
