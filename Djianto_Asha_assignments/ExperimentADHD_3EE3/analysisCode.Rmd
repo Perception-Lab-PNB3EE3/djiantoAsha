@@ -73,31 +73,34 @@ happy_data <- happy_data %>%
 
 # filter only correct happy trials
 correct_only_happy <- happy_data %>%
-  filter(correct == 'true')
-
+  filter(correct == 'true' | correct == 'TRUE')
+View(correct_only_happy)
 
 # filter out trials that have no correct happy trials
-files_with_no_true <- happy_data %>%
+files_no_true_happy <- happy_data %>%
   group_by(file_source) %>%
-  summarize(has_true = any(correct == 'true')) %>%
+  summarize(has_true = any(correct == 'true' | correct == 'TRUE')) %>%
   filter(has_true == FALSE) %>%
   pull(file_source)
+View(files_no_true_happy)
 
-files_with_no_true_rows <- happy_data %>%
-  filter(file_source %in% files_with_no_true & correct == 'false')
+files_no_true_happy <- happy_data %>%
+  filter(file_source %in% files_no_true_happy & (correct == 'false' | correct == 'FALSE'))
+View(files_no_true_happy)
 
 # combine the files that have true correct happy trials & the one with no true correct happy trials
 final_happy_data <- bind_rows(correct_only_happy, files_with_no_true_rows)
 View(final_happy_data)
 
-
+# mean rt for happy trials
 mean_rt_happy <- final_happy_data %>%
   group_by(file_source) %>%
   summarize(mean_rt_happy = mean(rt))
 
 View(mean_rt_happy)
 
-sd_rt_happy <- correctOnly_happy %>%
+sd_rt_happy <- final_happy_data %>%
+  group_by(file_source) %>%
   summarize(sd_rt_happy = sd(rt))
 
 View(sd_rt_happy)
@@ -112,14 +115,36 @@ sad_data <- sad_data %>%
 
 View(sad_data)
 
-correctOnly_sad <- (sad_data[which(sad_data$correct == 'true'),])
+# filter only correct sad trials
+correct_only_sad <- sad_data %>%
+  filter(correct == 'true' | correct == 'TRUE')
+View(correct_only_sad)
 
-mean_rt_sad <- correctOnly_sad %>%
+# filter out trials that have no correct happy trials
+files_no_true_sad <- sad_data %>%
+  group_by(file_source) %>%
+  summarize(has_true = any(correct == 'true' | correct == 'TRUE')) %>%
+  filter(has_true == FALSE) %>%
+  pull(file_source)
+View(files_no_true_sad)
+
+files_no_true_sad <- sad_data %>%
+  filter(file_source %in% files_no_true_sad & (correct == 'false' | correct == 'FALSE'))
+View(files_no_true_sad)
+
+# combine the files that have true correct happy trials & the one with no true correct happy trials
+final_sad_data <- bind_rows(correct_only_sad, files_no_true_sad)
+View(final_sad_data)
+
+# mean rt for sad trials
+mean_rt_sad <- final_sad_data %>%
+  group_by(file_source) %>%
   summarize(mean_rt_sad = mean(rt))
 
 View(mean_rt_sad)
 
-sd_rt_sad <- correctOnly_sad %>%
+sd_rt_sad <- final_sad_data %>%
+  group_by(file_source) %>%
   summarize(sd_rt_sad = sd(rt))
 
 View(sd_rt_sad)
@@ -131,12 +156,39 @@ angry_data <- angry_data[(which(angry_data$correct_response %in% "h")),]
 
 View(angry_data)
 
-correctOnly_angry <- (angry_data[which(angry_data$correct == 'true'),])
+# filter only correct sad trials
+correct_only_angry <- angry_data %>%
+  filter(correct == 'true' | correct == 'TRUE')
+View(correct_only_angry)
 
-mean_rt_angry <- mean(as.numeric(correctOnly_angry$rt)) # class of rt data was "character", so must change to "numeric" to calculate mean
-sd_rt_angry <- sd(as.numeric(correctOnly_angry$rt))
+# filter out trials that have no correct happy trials
+files_no_true_angry <- angry_data %>%
+  group_by(file_source) %>%
+  summarize(has_true = any(correct == 'true' | correct == 'TRUE')) %>%
+  filter(has_true == FALSE) %>%
+  pull(file_source)
+View(files_no_true_angry)
 
-percent_correct_angry <- ((length(which(angry_data$correct == 'true'))) / (length(angry_data$correct)))*100
+files_no_true_angry <- angry_data %>%
+  filter(file_source %in% files_no_true_angry & (correct == 'false' | correct == 'FALSE'))
+View(files_no_true_angry)
+
+# combine the files that have true correct happy trials & the one with no true correct happy trials
+final_angry_data <- bind_rows(correct_only_angry, files_no_true_angry)
+View(final_angry_data)
+
+# mean rt for angry trials
+mean_rt_angry <- final_angry_data %>%
+  group_by(file_source) %>%
+  summarize(mean_rt_sad = mean(rt))
+
+View(mean_rt_angry)
+
+sd_rt_angry <- final_angry_data %>%
+  group_by(file_source) %>%
+  summarize(sd_rt_sad = sd(rt))
+
+View(sd_rt_angry)
 
 
 # Organizing participant's Descriptive statistics in a table:
